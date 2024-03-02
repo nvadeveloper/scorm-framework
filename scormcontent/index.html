@@ -29,8 +29,16 @@
                 return <h3 className="text-xl font-bold mb-4">{text}</h3>;
             };
 
-            const Paragraph = ({ text }) => {
-                return <p className="mb-4">{text}</p>;
+            const Paragraph = ({ children }) => {
+                return <p className="mb-4">{children}</p>;
+            };
+
+            const Link = ({ text, href }) => {
+                return (
+                    <a className="font-bold text-green-600" href={href} target="_blank">
+                        {text}{' '}
+                    </a>
+                );
             };
 
             const ResultButton = () => {
@@ -58,9 +66,44 @@
                         <CourseTitle text="Lorem ipsum dolor sit amet, consectetur adipiscing elit" />
                         <Title text="Lorem ipsum dolor sit amet, consectetur adipiscing elit" />
                         <Subtitle text="Lorem ipsum dolor sit amet, consectetur adipiscing elit" />
-                        <Paragraph text="The oldest classical British and Latin writing had little or no space between words and could be written in boustrophedon (alternating directions). Over time, text direction (left to right) became standardized. Word dividers and terminal punctuation became common. The first way to divide sentences into groups was the original paragraphos, similar to an underscore at the beginning of the new group.[2] The Greek parágraphos evolved into the pilcrow (¶), which in English manuscripts in the Middle Ages can be seen inserted inline between sentences." />
-                        <Paragraph text="Ancient manuscripts also divided sentences into paragraphs with line breaks (newline) followed by an initial at the beginning of the next paragraph. An initial is an oversized capital letter, sometimes outdented beyond the margin of the text. This style can be seen, for example, in the original Old English manuscript of Beowulf. Outdenting is still used in English typography, though not commonly.[3] Modern English typography usually indicates a new paragraph by indenting the first line. This style can be seen in the (handwritten) United States Constitution from 1787. For additional ornamentation, a hedera leaf or other symbol can be added to the inter-paragraph white space, or put in the indentation space." />
-                        <Paragraph text="A second common modern English style is to use no indenting, but add vertical white space to create block paragraphs. On a typewriter, a double carriage return produces a blank line for this purpose; professional typesetters (or word processing software) may put in an arbitrary vertical space by adjusting leading. This style is very common in electronic formats, such as on the World Wide Web and email. Wikipedia itself employs this format." />
+                        <Paragraph>
+                            The oldest classical British and Latin writing had little or no space
+                            between words and could be written in{' '}
+                            <Link
+                                text="boustrophedon"
+                                href="https://en.wikipedia.org/wiki/Boustrophedon"
+                            />
+                            (alternating directions). Over time, text direction (left to right)
+                            became standardized. Word dividers and terminal punctuation became
+                            common. The first way to divide sentences into groups was the original
+                            paragraphos, similar to an underscore at the beginning of the new
+                            group.[2] The Greek parágraphos evolved into the pilcrow (¶), which in
+                            English manuscripts in the Middle Ages can be seen inserted inline
+                            between sentences.
+                        </Paragraph>
+
+                        <Paragraph>
+                            Ancient manuscripts also divided sentences into paragraphs with line
+                            breaks (newline) followed by an initial at the beginning of the next
+                            paragraph. An initial is an oversized capital letter, sometimes
+                            outdented beyond the margin of the text. This style can be seen, for
+                            example, in the original Old English manuscript of Beowulf. Outdenting
+                            is still used in English typography, though not commonly.[3] Modern
+                            English typography usually indicates a new paragraph by indenting the
+                            first line. This style can be seen in the (handwritten) United States
+                            Constitution from 1787. For additional ornamentation, a hedera leaf or
+                            other symbol can be added to the inter-paragraph white space, or put in
+                            the indentation space.
+                        </Paragraph>
+                        <Paragraph>
+                            A second common modern English style is to use no indenting, but add
+                            vertical white space to create block paragraphs. On a typewriter, a
+                            double carriage return produces a blank line for this purpose;
+                            professional typesetters (or word processing software) may put in an
+                            arbitrary vertical space by adjusting leading. This style is very common
+                            in electronic formats, such as on the World Wide Web and email.
+                            Wikipedia itself employs this format.
+                        </Paragraph>
                         <ResultButton />
                     </main>
                 );
