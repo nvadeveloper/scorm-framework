@@ -5,6 +5,17 @@
         <title>Document</title>
         <script language="JavaScript1.2" src="../scormdriver/scormdriver.js"></script>
         <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            accent: '#16A34A',
+                        },
+                    },
+                },
+            };
+        </script>
         <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
         <script
             crossorigin
@@ -35,7 +46,7 @@
 
             const Link = ({ text, href }) => {
                 return (
-                    <a className="font-bold text-green-600" href={href} target="_blank">
+                    <a className="font-bold text-accent" href={href} target="_blank">
                         {text}{' '}
                     </a>
                 );
